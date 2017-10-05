@@ -1,0 +1,39 @@
+Loading data 
+Finished loading data 
+Fitting Random Forest 
+[Parallel(n_jobs=-1)]: Done  38 tasks      | elapsed:  3.8min
+[Parallel(n_jobs=-1)]: Done 188 tasks      | elapsed: 16.9min
+[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed: 22.4min finished
+RF training took 22.7830699007 minutes 
+[Parallel(n_jobs=6)]: Done  38 tasks      | elapsed:  1.2min
+[Parallel(n_jobs=6)]: Done 188 tasks      | elapsed:  1.5min
+[Parallel(n_jobs=6)]: Done 250 out of 250 | elapsed:  1.6min finished
+[Parallel(n_jobs=6)]: Done  38 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=6)]: Done 188 tasks      | elapsed:   17.1s
+[Parallel(n_jobs=6)]: Done 250 out of 250 | elapsed:   22.7s finished
+Accuracy of Random Forrest with 250 trees was 76.10% 
+recall of RF is 55.72% 
+Precision of RF is 66.82% 
+F1 score of RF was 60.77% 
+Fitting GB 
+GB training took 148.3349003 
+Accuracy of GB with 250 trees was 0.768999003544 
+recall of GB is 55.87% 
+Precision of GB is 68.73% 
+F1 score of GB was 61.64% 
+Fitting Random Forest 
+[Parallel(n_jobs=-1)]: Done  38 tasks      | elapsed:  4.0min
+[Parallel(n_jobs=-1)]: Done 188 tasks      | elapsed: 16.8min
+[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed: 22.0min finished
+RF training took 22.1455525478 minutes 
+[Parallel(n_jobs=6)]: Done  38 tasks      | elapsed:    8.5s
+[Parallel(n_jobs=6)]: Done 188 tasks      | elapsed:   20.1s
+[Parallel(n_jobs=6)]: Done 250 out of 250 | elapsed:   25.0s finished
+[Parallel(n_jobs=6)]: Done  38 tasks      | elapsed:    3.2s
+[Parallel(n_jobs=6)]: Done 188 tasks      | elapsed:   14.8s
+[Parallel(n_jobs=6)]: Done 250 out of 250 | elapsed:   19.7s finished
+Accuracy of Random Forrest with 250 trees was 76.16% 
+recall of RF is 55.86% 
+Precision of RF is 66.91% 
+F1 score of RF was 60.89% 
+Fitting GB 
