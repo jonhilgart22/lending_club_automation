@@ -59,7 +59,7 @@ if __name__ == "__main__":
     epo = int(sys.argv[1])
     batch_size_in = int(sys.argv[2])
     # adaptive decay
-    learning_r = 0.1
+    learning_r = 0.01
     decay_r = learning_r / epo
     # read in data
     sys.stderr.write("Reading in data\n")
@@ -127,5 +127,5 @@ if __name__ == "__main__":
         m.save('models/mlp_model_{}-epochs_{}-batchsize_{}-train_acc_{}-val_acc.h5'.format(epo, batch_size_in, train_acc, val_acc)) # save weigts to h5py
         # serialize model to JSON
         model_json=m.to_json()
-        with open('models/mlp_model_{}-epochs_{}-batchsize_{}-train_acc_{}-val_acc.h5'.format(epo, batch_size_in, train_acc, val_acc),  "w") as json_file:
+        with open('models/mlp_model_{}-epochs_{}-batchsize_{}-train_acc_{}-val_acc'.format(epo, batch_size_in, train_acc, val_acc),  "w") as json_file:
             json_file.write(model_json)
