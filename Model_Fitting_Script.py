@@ -1,6 +1,6 @@
 
 # coding: utf-8
-#! usr/bin/env/python2
+#!/usr/bin/python
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -10,7 +10,7 @@ from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 import time
 import sys
-import json as simplejson
+
 __author__="Jonathan Hilgart"
 
 
@@ -177,7 +177,7 @@ def train_test_split_val(input_df):
     Test is the test set"""
 
     y_col = input_df.repaid
-    x_cols = input_df.iloc[:,input_df.columns!='repaid'] 
+    x_cols = input_df.iloc[:,input_df.columns!='repaid']
     #scale the x_variables
     scaler = StandardScaler()
     x_scaled = scaler.fit_transform(x_cols)
@@ -198,11 +198,11 @@ def fit_rf(input_x,input_y, n_trees):
     sys.stderr.write("RF training took {} minutes \n".format((e_rf-s_rf)/60))
     return rf
 
-    
+
 def rf_metrics(val_x, val_y, rf, n_trees):
     """Determine the metrics for the RF.
     returns: accuracy, recall, precision, F1"""
-    
+
     predictions_rf = rf.predict(val_x)
     positive_probability_predictions = rf.predict_proba(X_val)[:,1]
     accuracy_rf = accuracy_score(val_y, predictions_rf)
@@ -244,8 +244,8 @@ def gb_metrics(gb, x_val, y_val , n_trees):
 
 
 
-    
-    
+
+
 if __name__ =="__main__":
     # bring in CLI arguments
     if len(sys.argv)!=4:
@@ -254,9 +254,9 @@ if __name__ =="__main__":
     num_trees_rf = int(sys.argv[1])
     num_trees_gb = int(sys.argv[2])
     cv_times = int(sys.argv[3])
-    
-    
-    
+
+
+
     #Load data
     sys.stderr.write('Loading data \n')
     lending_club_df = pd.read_csv("./data/final_lending_club.csv")
@@ -289,7 +289,7 @@ if __name__ =="__main__":
  'addr_state_WV',
  'addr_state_WY']]
     # train test validate CV
-    ## Keep track of CV metrics 
+    ## Keep track of CV metrics
     ### RF
     rf_accuracy_cv = []
     rf_recall_cv = []
@@ -300,7 +300,7 @@ if __name__ =="__main__":
     gb_recall_cv = []
     gb_precision_cv = []
     gb_f1_cv = []
-    
+
     for  _ in range(cv_times):
         X_t,X_train,X_val, y_t, y_train, y_val = train_test_split_val(lending_club_df_training )
         # fit RF
@@ -335,14 +335,6 @@ if __name__ =="__main__":
     # SAVE THE MODELS
     filename = './models/random_forest_{}-trees.joblib.pkl'.format(num_trees_rf)
     _ = joblib.dump(rf, filename, compress=9)
-    
+
     filename = './models/gradient_boosting_{}-trees.joblib.pkl'.format(num_trees_gb)
     _ = joblib.dump(gb, filename, compress=9)
-    
-
-
-
-
-
-
-
