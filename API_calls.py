@@ -12,6 +12,8 @@ import json
 import datetime
 import sys
 
+BEST_MODEL_FILE = './models/gradient_boosting_400-trees.joblib.pkl'
+
 
 def check_cash(credentials):
 
@@ -241,7 +243,7 @@ def create_feature_columns(loans_df):
 
 def load_model():
     """"Load the trained GB model"""
-    loaded_gb_model = joblib.load(open("./models/gradient_boosting_400-trees.joblib.pkl", 'rb'))
+    loaded_gb_model = joblib.load(open(BEST_MODEL_FILE, 'rb'))
     return loaded_gb_model
 
 
