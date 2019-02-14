@@ -51,7 +51,7 @@ def create_feature_columns(loans_df):
     else:
         loans_df['openIl6m'] = 0
     # #### Convert EmpLength to years
-    loans_df.empLength = loans_df.empLength.apply(lambda x: x / 60 if x > else 0)
+    loans_df.empLength = loans_df.empLength.apply(lambda x: x / 60 if x > 60 else 0)
     # #### Create month to int 1-12
     loans_df['month'] = loans_df.acceptD.apply(lambda x: pd.to_datetime(x).month)
     # #### Crea cols term_36 and term_60
