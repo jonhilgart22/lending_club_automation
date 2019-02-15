@@ -266,7 +266,9 @@ if __name__ =="__main__":
  'funded_amnt','int_rate','installment','emp_length','annual_inc','zip_code','dti','delinq_2yrs','inq_last_6mths',
  'mths_since_last_delinq','mths_since_last_record','open_acc','pub_rec',
  'revol_bal','revol_util','total_acc','collections_12_mths_ex_med',
- 'mths_since_last_major_derog', 'acc_now_delinq', 'tot_coll_amt', 'tot_cur_bal', 'open_acc_6m','open_il_6m', 'open_il_12m','open_il_24m',
+ 'mths_since_last_major_derog', 'acc_now_delinq', 'tot_coll_amt', 'tot_cur_bal', 'open_acc_6m',
+#'open_il_6m',  as of 2/2019 dont have this
+    'open_il_12m','open_il_24m',
  'total_bal_il','il_util','max_bal_bc','all_util', 'total_rev_hi_lim','inq_last_12m','acc_open_past_24mths',
  'avg_cur_bal', 'bc_util', 'chargeoff_within_12_mths', 'delinq_amnt','mo_sin_old_il_acct', 'mo_sin_old_rev_tl_op',
  'mo_sin_rcnt_rev_tl_op', 'mo_sin_rcnt_tl', 'mort_acc', 'mths_since_recent_bc', 'mths_since_recent_bc_dlq','mths_since_recent_inq',
