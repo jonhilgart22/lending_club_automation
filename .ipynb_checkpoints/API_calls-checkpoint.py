@@ -313,7 +313,11 @@ if __name__ == "__main__":
     loaded_gb_model = load_model()
     # Predic the loan success
     loans_to_purchase = predict_loan_success(loaded_gb_model, final_api_df)
-    sys.stderr.write("Loans to purchase = {} \n".format(loans_to_purchase.sum()))
+    # send to log file
+    sys.stderr.write("Loans to purchase = {} \n".format(loans_to_purchase.sum())) 
+    with open('./logs/purchsae_loan_logs.txt', 'w') as f: 
+        f.write("Time = {}".format(datetime.datetime.today()))
+        f.write("Loans to purchase = {} \n".format(loans_to_purchase.sum()))    
     # purchase loans
     purchase_loans(available_cash, account_id, loans_to_purchase,
                        portfolio_id, credentials)
