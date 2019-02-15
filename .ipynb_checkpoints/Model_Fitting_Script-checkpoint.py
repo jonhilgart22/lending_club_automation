@@ -313,6 +313,10 @@ if __name__ =="__main__":
         rf_recall_cv.append(recall_rf)
         rf_precision_cv.append(precision_rf)
         rf_f1_cv.append(f1_rf)
+        sys.stderr.write(' RF accuracy {} \n'.append(accuracy_rf))
+        
+        filename = './models/random_forest_{}-trees.joblib.pkl'.format(num_trees_rf)
+        _ = joblib.dump(rf, filename, compress=9)
         # Fit GB
         gb = fit_gb(X_t,y_t,num_trees_gb)
         # determine gb metrics
@@ -321,6 +325,11 @@ if __name__ =="__main__":
         gb_recall_cv.append(recall_gb)
         gb_precision_cv.append(precision_gb)
         gb_f1_cv.append(f1_gb)
+        sys.stderr.write('GB accuracy {} \n'.append(accuracy_gb))
+
+        filename = './models/gradient_boosting_{}-trees.joblib.pkl'.format(num_trees_gb)
+        _ = joblib.dump(gb, filename, compress=9)
+        
     sys.stderr.write("############################### \n")
     sys.stderr.write("FINISHED TRAINING \n")
     sys.stderr.write("############################### \n")
@@ -334,9 +343,4 @@ if __name__ =="__main__":
     sys.stderr.write('Final GB recall {} \n'.format(np.mean(gb_recall_cv)))
     sys.stderr.write('Final GB precision {} \n'.format(np.mean(gb_precision_cv)))
     sys.stderr.write('Final GB f1 \n'.format(np.mean(gb_f1_cv)))
-    # SAVE THE MODELS
-    filename = './models/random_forest_{}-trees.joblib.pkl'.format(num_trees_rf)
-    _ = joblib.dump(rf, filename, compress=9)
 
-    filename = './models/gradient_boosting_{}-trees.joblib.pkl'.format(num_trees_gb)
-    _ = joblib.dump(gb, filename, compress=9)
