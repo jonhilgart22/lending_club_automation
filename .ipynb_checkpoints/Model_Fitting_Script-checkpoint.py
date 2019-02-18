@@ -313,7 +313,7 @@ if __name__ =="__main__":
         rf_recall_cv.append(recall_rf)
         rf_precision_cv.append(precision_rf)
         rf_f1_cv.append(f1_rf)
-        sys.stderr.write(' RF accuracy {} \n'.append(accuracy_rf))
+        sys.stderr.write(' RF accuracy {} \n'.format(accuracy_rf))
         
         filename = './models/random_forest_{}-trees.joblib.pkl'.format(num_trees_rf)
         _ = joblib.dump(rf, filename, compress=9)
@@ -325,7 +325,7 @@ if __name__ =="__main__":
         gb_recall_cv.append(recall_gb)
         gb_precision_cv.append(precision_gb)
         gb_f1_cv.append(f1_gb)
-        sys.stderr.write('GB accuracy {} \n'.append(accuracy_gb))
+        sys.stderr.write('GB accuracy {} \n'.format(accuracy_gb))
 
         filename = './models/gradient_boosting_{}-trees.joblib.pkl'.format(num_trees_gb)
         _ = joblib.dump(gb, filename, compress=9)
