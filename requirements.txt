@@ -10,7 +10,7 @@ ipython-genutils==0.2.0
 jedi==0.13.2
 jupyter-client==5.2.4
 jupyter-core==4.4.0
-numpy==1.16.1
+numpy==1.22.0
 pandas==0.24.1
 parso==0.3.4
 pexpect==4.6.0
